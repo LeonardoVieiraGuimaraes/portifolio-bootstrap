@@ -6,8 +6,8 @@ networks:
 services:
   portifoliov1:
     image: nginx:latest
-    # ports:
-    #   - 85:80
+    ports:
+      - 85:85
 
     volumes:
       - ./dist:/usr/share/nginx/html/leo-portifolio-v1
