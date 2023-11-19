@@ -19,15 +19,6 @@ jobs:
           cp docker-compose.yml leo-portifolio-v1/
           cp nginx.conf leo-portifolio-v1/
           cp -r ./dist leo-portifolio-v1/dist
-      # - name: 📂 Sync files
-      #   uses: pressidium/lftp-mirror-action@v1
-      #   with:
-      #     host: ${{ secrets.sftp_host }}
-      #     user: ${{ secrets.sftp_user }}
-      #     pass: ${{ secrets.sftp_password }}
-      #     port: ${{ secrets.sftp_port }}
-      #     localDir: "./leo-portifolio-v1"
-      #     remoteDir: "leo-portifolio-v1"
 
       - name: Copy files
         uses: appleboy/scp-action@v0.1.1
@@ -37,7 +28,7 @@ jobs:
           key: ${{ secrets.sftp_private_key }}
           port: ${{ secrets.sftp_port }}
           source: "./leo-portifolio-v1"
-          target: "leo-portifolio-v1"
+          target: "/leo-portifolio-v1"
 
           # ignoreFile: '.lftp_ignore'
           # reverse: true
@@ -47,7 +38,6 @@ jobs:
         with:
           host: ${{ secrets.sftp_host }}
           username: ${{ secrets.sftp_user }}
-          # password: ${{ secrets.sftp_password }}
           key: ${{ secrets.sftp_private_key }}
           port: ${{ secrets.sftp_port }}
           script: |
