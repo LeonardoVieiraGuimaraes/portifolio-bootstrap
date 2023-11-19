@@ -16,7 +16,7 @@ jobs:
       - name: Prepare files
         run: |
           mkdir leo-portifolio-v1
-          cp docker-compose.yml leo-portifolio/
+          cp docker-compose.yml leo-portifolio-v1/
           cp nginx.conf leo-portifolio-v1/
           cp -r ./dist leo-portifolio/dist
 
