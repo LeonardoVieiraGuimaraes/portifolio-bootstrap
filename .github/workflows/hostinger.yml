@@ -30,6 +30,7 @@ jobs:
           source: "./leo-portifolio-v1"
           target: "/"
           overwrite: true
+          rm: true
 
           # ignoreFile: '.lftp_ignore'
           # reverse: true
