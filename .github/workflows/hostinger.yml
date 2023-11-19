@@ -38,11 +38,12 @@ jobs:
         with:
           host: ${{ secrets.sftp_host }}
           username: ${{ secrets.sftp_user }}
-          key: ${{ secrets.sftp_private_key }}
+          password: ${{ secrets.sftp_password }}
           port: ${{ secrets.sftp_port }}
           script: |
             cd leo-portifolio-v1
             docker compose up -d --build
+
           # script: |
           #   cd leo-portifolio
           #   docker compose up -d
