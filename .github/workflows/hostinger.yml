@@ -20,6 +20,14 @@ jobs:
           cp nginx.conf leo-portifolio-v1/
           cp -r ./dist leo-portifolio-v1/dist
 
+      - name: Remove existing files
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.sftp_host }}
+          username: ${{ secrets.sftp_user }}
+          key: ${{ secrets.sftp_private_key }}
+          script: rm -rf /leo-portifolio-v1
+
       - name: Copy files
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -29,8 +37,6 @@ jobs:
           port: ${{ secrets.sftp_port }}
           source: "./leo-portifolio-v1"
           target: "/leo-portifolio-v1"
-          overwrite: true
-          rm: true
 
           # ignoreFile: '.lftp_ignore'
           # reverse: true
