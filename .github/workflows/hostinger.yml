@@ -28,7 +28,7 @@ jobs:
           key: ${{ secrets.sftp_private_key }}
           port: ${{ secrets.sftp_port }}
           source: "./leo-portifolio-v1"
-          target: "."
+          target: "/"
 
           # ignoreFile: '.lftp_ignore'
           # reverse: true
