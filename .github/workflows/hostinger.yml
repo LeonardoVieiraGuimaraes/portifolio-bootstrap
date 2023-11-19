@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.sftp_user }}
           key: ${{ secrets.sftp_private_key }}
           port: ${{ secrets.sftp_port }}
-          source: "./leo-portifolio"
+          source: "./leo-portifolio-v1"
           target: "/root"
           overwrite: true
           # rm: true
