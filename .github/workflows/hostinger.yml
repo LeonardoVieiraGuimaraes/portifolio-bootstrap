@@ -25,7 +25,7 @@ jobs:
       #   with:
       #     host: ${{ secrets.sftp_host }}
       #     user: ${{ secrets.sftp_user }}
-      #     ssh-private-key: ${{ secrets.sftp_private_key }}
+      #     pass: ${{ secrets.sftp_password }}
       #     port: ${{ secrets.sftp_port }}
       #     localDir: "./leo-portifolio-v1"
       #     remoteDir: "leo-portifolio-v1"
